@@ -6,13 +6,10 @@
 
 body { 
   font-family: 'Open Sans', sans-serif;
-  position: relative;
   height: 100vh;
 }
 
 form {
-  position: absolute;
-  bottom: 0;
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -20,7 +17,7 @@ form {
   background-color: rgb(234, 245, 241);
 }
 
-#user-input {
+#input-text {
   border: none;
   border-bottom: 1px solid black;
   width: 70%;
