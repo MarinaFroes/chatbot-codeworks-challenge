@@ -32,4 +32,5 @@ function addUserBubble(text) {
     question++;
     setTimeout(() => addComputerBubble(computerQuestions[question]), 1000);
   }
+  $("#user-input").trigger("reset");
 }
