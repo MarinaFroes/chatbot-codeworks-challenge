@@ -1,0 +1,23 @@
+{
+  "name": "chatbot-challenge",
+  "version": "1.0.0",
+  "description": "chatbot built with html, css, JS and jQuery",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "JS",
+    "javascript",
+    "jquery",
+    "chatbot",
+    "codeworks"
+  ],
+  "author": "Marina Costa",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.5.1"
+  }
+}
