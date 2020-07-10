@@ -39,3 +39,5 @@ $ npm install
 * [MDN Documentation](https://developer.mozilla.org/en-US/)
 * [JavaScript Modules with Import/Export Syntax (ES6) - JavaScript Tutorial](https://www.youtube.com/watch?v=s9kNndJLOjg)
 * [CSS tricks](https://css-tricks.com/)
+* [Country-quilt pattern](https://www.toptal.com/designers/subtlepatterns/country-quilt/) made by [Pete Fecteau](http://buttonpresser.com/)
+* Ícones feitos por <a href="https://www.flaticon.com/br/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/br/" title="Flaticon"> www.flaticon.com</a>
