@@ -8,16 +8,25 @@ function addComputerBubble(text) {
 
   if (!utils.isSameSpeaker("computer", utils.previousSpeaker)) {
     computerBubble.addClass("different-speaker");
-    const leftArrow = $("<div>").addClass("arrow left").appendTo(computerBubble);
+    $("<div>").addClass("arrow left").appendTo(computerBubble);
   } else {
     computerBubble.addClass("same-speaker");
   }
   
-  const compBubbleP = $("<p>").addClass("computer-speak").text(text).appendTo(computerBubble);
-  const time = $("<p>").text(utils.getTimestamp()).addClass("timestamp").appendTo(computerBubble);
+  $("<p>").addClass("computer-speak").text(text).appendTo(computerBubble);
+  $("<p>").text(utils.getTimestamp()).addClass("timestamp").appendTo(computerBubble);
   $("main").prepend(computerBubble);
 
   return utils.setCurrentSpeaker("computer");
+}
+
+function finishChat() {
+  $("#user-input").hide();
+  $(".btn").hide();
+  $(".speech-bubble").hide();
+  $("main").css("height", "calc(100 % - 80px)");
+  $(".robot-greeting").text("See you next time. Refresh page to chat again.");
+  $(".robot-container").show();
 }
 
 function addUserBubble(text) {
@@ -25,18 +34,20 @@ function addUserBubble(text) {
 
   if (!utils.isSameSpeaker("user", utils.previousSpeaker)) {
     userBubble.addClass("different-speaker");
-    const rightArrow = $("<div>").addClass("arrow right").appendTo(userBubble);
+    $("<div>").addClass("arrow right").appendTo(userBubble);
   } else {
     userBubble.addClass("same-speaker");
   }
 
-  const userBubbleP = $("<p>").addClass("user-speak").text(text).appendTo(userBubble);
-  const time = $("<p>").text(utils.getTimestamp()).addClass("timestamp").appendTo(userBubble);
+  $("<p>").addClass("user-speak").text(text).appendTo(userBubble);
+  $("<p>").text(utils.getTimestamp()).addClass("timestamp").appendTo(userBubble);
   $("main").prepend(userBubble);
 
   if (questionIndex < computerQuestions.length - 1) {
     questionIndex++;
-    setTimeout(() => addComputerBubble(computerQuestions[questionIndex]), 1000);
+    setTimeout(() => addComputerBubble(computerQuestions[questionIndex]), 800);
+  } else {
+    finishChat();
   }
 
   $("#user-input").trigger("reset");
