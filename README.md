@@ -6,10 +6,10 @@
 
 ## Overview
 
-- Here you can preview the results for mobile and desktop:
-<p align="center"><img src="./design/desktop.png" alt="desktop version" title="desktop version"></p>
+- Here you can preview the result:
+<p align="center"><img src="./images/screenshot-01.png" alt="screenshot" title="screenshot" ></p>
 
-<p align="center"><img src="./design/mobile.png" alt="mobile version" title="mobile version" width="50%"></p>
+<p align="center"><img src="./images/screenshot-02.png" alt="screenshot" title="screenshot" s></p>
 
 ## Requirements
 
