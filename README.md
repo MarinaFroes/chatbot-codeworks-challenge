@@ -13,12 +13,12 @@
 
 ## Requirements
 
-- [ ] Simple chat application built with `HTML`, `CSS`, `JavaScript` and `jQuery`. 
-- [ ] Single page, that opens in the browser, and shows the messages in colored bubbles. 
-- [ ] The computer generates a random conversation.
-- [ ] The user can post messages to answer to the computer.
-- [ ] The screen automatically flows and follows the messages posted. 
-- [ ] Each message should have a small indication of the time it was sent.
+- [x] Simple chat application built with `HTML`, `CSS`, `JavaScript` and `jQuery`. 
+- [x] Single page, that opens in the browser, and shows the messages in colored bubbles. 
+- [x] The computer generates a random conversation.
+- [x] The user can post messages to answer to the computer.
+- [x] The screen automatically flows and follows the messages posted. 
+- [x] Each message should have a small indication of the time it was sent.
 
 ## How to use it
 
@@ -38,3 +38,4 @@ $ npm install
 * [jQuery Documentation](https://jquery.com/)
 * [MDN Documentation](https://developer.mozilla.org/en-US/)
 * [JavaScript Modules with Import/Export Syntax (ES6) - JavaScript Tutorial](https://www.youtube.com/watch?v=s9kNndJLOjg)
+* [CSS tricks](https://css-tricks.com/)
