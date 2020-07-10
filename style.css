@@ -11,6 +11,28 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: url(./images/country-quilt.png);
+}
+
+header {
+  background-color: rgb(9, 1, 27);
+  color: white;
+  width: 100%;
+  max-width: 600px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+  margin: 20px;
+  height: 40px;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 20px;
 }
 
 main {
@@ -19,7 +41,7 @@ main {
   overflow-y: auto;
   width: 100%;
   max-width: 600px;
-  padding-bottom: 20px;
+  padding: 30px 0;
   display: flex;
   flex-direction: column-reverse;
 }
@@ -45,7 +67,7 @@ form {
 #submit-button {
   width: 25%;
   height: 30px;
-  background-color: rgb(162, 0, 255);
+  background-color: #ff7b10;
   color: white;
   padding: 5px;
   border: none;
@@ -115,3 +137,8 @@ form {
   justify-self: self-end;
 }
 
+@media only screen and (max-width: 500px){
+  header img {
+    display: none;
+  }
+}
