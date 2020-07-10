@@ -1,5 +1,5 @@
 import * as utils from './utils.js';
-import { computerQuestions } from './computerQuestions.js';
+import { computerQuestions, inviteForChat } from './botMessageProvider.js';
 
 let questionIndex = 0;
 
@@ -16,7 +16,6 @@ function addComputerBubble(text) {
   const compBubbleP = $("<p>").addClass("computer-speak").text(text).appendTo(computerBubble);
   const time = $("<p>").text(utils.getTimestamp()).addClass("timestamp").appendTo(computerBubble);
   $("main").prepend(computerBubble);
-  // computerBubble.appendTo("main");
 
   return utils.setCurrentSpeaker("computer");
 }
@@ -34,7 +33,6 @@ function addUserBubble(text) {
   const userBubbleP = $("<p>").addClass("user-speak").text(text).appendTo(userBubble);
   const time = $("<p>").text(utils.getTimestamp()).addClass("timestamp").appendTo(userBubble);
   $("main").prepend(userBubble);
-  // userBubble.appendTo("main");
 
   if (questionIndex < computerQuestions.length - 1) {
     questionIndex++;
@@ -46,10 +44,37 @@ function addUserBubble(text) {
   return utils.setCurrentSpeaker("user");
 }
   
-addComputerBubble(computerQuestions[questionIndex]);
+function chatInit() {
+  $(".robot-container").hide();
+  $("main").css("height", "calc(100 % - 160px)");
+  
+  $('<form id="user-input">').append('<input type="text" name="input-text" id="input-text">').append('<input type="submit" value="Send" id="submit-button">').appendTo("body");
+  
+  $("#user-input").submit(function (event) {
+    event.preventDefault();
+    let inputText = $(this).find("[name=input-text]").val();
+    addUserBubble(inputText);
+  });
 
-$("#user-input").submit(function (event) {
-  event.preventDefault();
-  let inputText = $(this).find("[name=input-text]").val();
-  addUserBubble(inputText);
-});
+  addComputerBubble(computerQuestions[questionIndex]);
+}
+
+$("#yes").on("click", function (e) {
+  e.preventDefault();
+  chatInit();
+})
+
+let refuseNum = 0;
+
+$("#no").on("click", function (e) {
+  e.preventDefault();
+
+  if (refuseNum <= 5) {
+    $(".robot-greeting").text(inviteForChat[refuseNum]);
+    refuseNum++;
+  } 
+
+  if (refuseNum > 5) {
+    refuseNum = 0;
+  }
+})
