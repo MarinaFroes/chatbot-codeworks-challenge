@@ -16,10 +16,12 @@ body {
 main {
   height: calc(100% - 80px);
   background-color: cadetblue;
-  overflow: scroll;
+  overflow-y: auto;
   width: 100%;
   max-width: 600px;
   padding-bottom: 20px;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 form {
