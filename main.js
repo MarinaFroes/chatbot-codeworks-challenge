@@ -6,31 +6,59 @@ const computerQuestions = [
   "Where do you live?"
 ]
 
-let question = 0;
+let questionIndex = 0;
+let previousSpeaker = "";
 
-addComputerBubble(computerQuestions[question]);
+function isSameSpeaker(currentSpeaker, previousSpeaker) {
+  return currentSpeaker === previousSpeaker;
+};
+
+function setCurrentSpeaker(currentSpeaker) {
+  previousSpeaker = currentSpeaker;
+};
+
+function addComputerBubble(text) {
+  const computerBubble = $("<div>").addClass("speech-bubble computer");
+
+  if (!isSameSpeaker("computer", previousSpeaker)) {
+    computerBubble.addClass("different-speaker");
+    const leftArrow = $("<div>").addClass("arrow left").appendTo(computerBubble);
+  } else {
+    computerBubble.addClass("same-speaker");
+  }
+  
+  const compBubbleP = $("<p>").text(text).appendTo(computerBubble);
+  computerBubble.appendTo("main");
+
+  return setCurrentSpeaker("computer");
+}
+
+function addUserBubble(text) {
+  const userBubble = $("<div>").addClass("speech-bubble user");
+
+  if (!isSameSpeaker("user", previousSpeaker)) {
+    userBubble.addClass("different-speaker");
+    const rightArrow = $("<div>").addClass("arrow right").appendTo(userBubble);
+  } else {
+    userBubble.addClass("same-speaker");
+  }
+
+  const userBubbleP = $("<p>").text(text).appendTo(userBubble);
+  userBubble.appendTo("main");
+  if (questionIndex < computerQuestions.length - 1) {
+    questionIndex++;
+    setTimeout(() => addComputerBubble(computerQuestions[questionIndex]), 1000);
+  }
+
+  $("#user-input").trigger("reset");
+
+  return setCurrentSpeaker("user");
+}
+  
+addComputerBubble(computerQuestions[questionIndex]);
 
 $("#user-input").submit(function (event) {
   event.preventDefault();
   let inputText = $(this).find("[name=input-text]").val();
   addUserBubble(inputText);
 });
-
-function addComputerBubble(text) {
-  const computerBubble = $("<div>").addClass("speech-bubble computer");
-  const leftArrow = $("<div>").addClass("arrow left").appendTo(computerBubble);
-  const compBubbleP = $("<p>").text(text).appendTo(computerBubble);
-  computerBubble.appendTo("main");
-}
-
-function addUserBubble(text) {
-  const userBubble = $("<div>").addClass("speech-bubble user");
-  const rightArrow = $("<div>").addClass("arrow right").appendTo(userBubble);
-  const userBubbleP = $("<p>").text(text).appendTo(userBubble);
-  userBubble.appendTo("main");
-  if (question < computerQuestions.length - 1) {
-    question++;
-    setTimeout(() => addComputerBubble(computerQuestions[question]), 1000);
-  }
-  $("#user-input").trigger("reset");
-}
