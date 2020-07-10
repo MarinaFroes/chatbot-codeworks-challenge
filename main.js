@@ -1,21 +1,12 @@
-import { getTimestamp } from './utils.js';
+import * as utils from './utils.js';
 import { computerQuestions } from './computerQuestions.js';
 
 let questionIndex = 0;
-let previousSpeaker = "";
-
-function isSameSpeaker(currentSpeaker, previousSpeaker) {
-  return currentSpeaker === previousSpeaker;
-};
-
-function setCurrentSpeaker(currentSpeaker) {
-  previousSpeaker = currentSpeaker;
-};
 
 function addComputerBubble(text) {
   const computerBubble = $("<div>").addClass("speech-bubble computer");
 
-  if (!isSameSpeaker("computer", previousSpeaker)) {
+  if (!utils.isSameSpeaker("computer", utils.previousSpeaker)) {
     computerBubble.addClass("different-speaker");
     const leftArrow = $("<div>").addClass("arrow left").appendTo(computerBubble);
   } else {
@@ -23,17 +14,17 @@ function addComputerBubble(text) {
   }
   
   const compBubbleP = $("<p>").addClass("computer-speak").text(text).appendTo(computerBubble);
-  const time = $("<p>").text(getTimestamp()).addClass("timestamp").appendTo(computerBubble);
+  const time = $("<p>").text(utils.getTimestamp()).addClass("timestamp").appendTo(computerBubble);
   $("main").prepend(computerBubble);
   // computerBubble.appendTo("main");
 
-  return setCurrentSpeaker("computer");
+  return utils.setCurrentSpeaker("computer");
 }
 
 function addUserBubble(text) {
   const userBubble = $("<div>").addClass("speech-bubble user");
 
-  if (!isSameSpeaker("user", previousSpeaker)) {
+  if (!utils.isSameSpeaker("user", utils.previousSpeaker)) {
     userBubble.addClass("different-speaker");
     const rightArrow = $("<div>").addClass("arrow right").appendTo(userBubble);
   } else {
@@ -41,7 +32,7 @@ function addUserBubble(text) {
   }
 
   const userBubbleP = $("<p>").addClass("user-speak").text(text).appendTo(userBubble);
-  const time = $("<p>").text(getTimestamp()).addClass("timestamp").appendTo(userBubble);
+  const time = $("<p>").text(utils.getTimestamp()).addClass("timestamp").appendTo(userBubble);
   $("main").prepend(userBubble);
   // userBubble.appendTo("main");
 
@@ -52,7 +43,7 @@ function addUserBubble(text) {
 
   $("#user-input").trigger("reset");
 
-  return setCurrentSpeaker("user");
+  return utils.setCurrentSpeaker("user");
 }
   
 addComputerBubble(computerQuestions[questionIndex]);

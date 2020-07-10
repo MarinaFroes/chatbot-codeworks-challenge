@@ -35,3 +35,13 @@ export function getTimestamp() {
   const time = getTime(d);
   return `${date}, ${time}`;
 }
+
+export let previousSpeaker = "";
+
+export function isSameSpeaker(currentSpeaker, previousSpeaker) {
+  return currentSpeaker === previousSpeaker;
+};
+
+export function setCurrentSpeaker(currentSpeaker) {
+  return previousSpeaker = currentSpeaker;
+};
