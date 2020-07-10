@@ -1,12 +1,12 @@
 export const computerQuestions = [
-  "Hello there, I'm Blorg. What is your name?",
-  "That's a pretty name. It's really nice to meet you.",
+  "Hello there. What is your name?",
+  "That's a pretty name. Nice to meet you. :D",
   "How old are you?",
-  "Oh, you're so young! What are your hobbies?",
+  "Oh, you're so young! What do you like to do?",
   "Damn, you know how to have fun! Where do you live?",
-  "Wow, I've always wanted to live theeere! So cool. And what do you do for a living?",
-  "Awesome. If I weren't a robot, I'd do the same thing."
-]
+  "Awesome, I've always wanted to live there! So cool. And what do you do for a living?",
+  "Wow, you're so interesting! It was really nice to talk to you. Bye :)"
+];
 
 export const inviteForChat = [
   "Whyyyy? I'm so coool! Let's chat!",
