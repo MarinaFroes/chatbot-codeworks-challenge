@@ -1,10 +1,5 @@
-
-const computerQuestions = [
-  "Hello there, I'm Blorg. What is your name?",
-  "It's really nice to meet you",
-  "How old are you?",
-  "Where do you live?"
-]
+import { getTimestamp } from './utils.js';
+import { computerQuestions } from './computerQuestions.js';
 
 let questionIndex = 0;
 let previousSpeaker = "";
@@ -27,7 +22,8 @@ function addComputerBubble(text) {
     computerBubble.addClass("same-speaker");
   }
   
-  const compBubbleP = $("<p>").text(text).appendTo(computerBubble);
+  const compBubbleP = $("<p>").addClass("computer-speak").text(text).appendTo(computerBubble);
+  const time = $("<p>").text(getTimestamp()).addClass("timestamp").appendTo(computerBubble);
   computerBubble.appendTo("main");
 
   return setCurrentSpeaker("computer");
@@ -43,7 +39,8 @@ function addUserBubble(text) {
     userBubble.addClass("same-speaker");
   }
 
-  const userBubbleP = $("<p>").text(text).appendTo(userBubble);
+  const userBubbleP = $("<p>").addClass("user-speak").text(text).appendTo(userBubble);
+  const time = $("<p>").text(getTimestamp()).addClass("timestamp").appendTo(userBubble);
   userBubble.appendTo("main");
   if (questionIndex < computerQuestions.length - 1) {
     questionIndex++;
