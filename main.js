@@ -24,7 +24,8 @@ function addComputerBubble(text) {
   
   const compBubbleP = $("<p>").addClass("computer-speak").text(text).appendTo(computerBubble);
   const time = $("<p>").text(getTimestamp()).addClass("timestamp").appendTo(computerBubble);
-  computerBubble.appendTo("main");
+  $("main").prepend(computerBubble);
+  // computerBubble.appendTo("main");
 
   return setCurrentSpeaker("computer");
 }
@@ -41,7 +42,9 @@ function addUserBubble(text) {
 
   const userBubbleP = $("<p>").addClass("user-speak").text(text).appendTo(userBubble);
   const time = $("<p>").text(getTimestamp()).addClass("timestamp").appendTo(userBubble);
-  userBubble.appendTo("main");
+  $("main").prepend(userBubble);
+  // userBubble.appendTo("main");
+
   if (questionIndex < computerQuestions.length - 1) {
     questionIndex++;
     setTimeout(() => addComputerBubble(computerQuestions[questionIndex]), 1000);
