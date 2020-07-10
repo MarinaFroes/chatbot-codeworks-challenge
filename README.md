@@ -37,3 +37,4 @@ $ npm install
 
 * [jQuery Documentation](https://jquery.com/)
 * [MDN Documentation](https://developer.mozilla.org/en-US/)
+* [JavaScript Modules with Import/Export Syntax (ES6) - JavaScript Tutorial](https://www.youtube.com/watch?v=s9kNndJLOjg)
