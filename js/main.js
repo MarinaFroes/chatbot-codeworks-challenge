@@ -59,7 +59,7 @@ function chatInit() {
   $(".robot-container").hide();
   $("main").css("height", "calc(100 % - 160px)");
   
-  $('<form id="user-input">').append('<input type="text" name="input-text" id="input-text">').append('<input type="submit" value="Send" id="submit-button">').appendTo("body");
+  $('<form id="user-input">').append('<input type="text" name="input-text" id="input-text" required>').append('<input type="submit" value="Send" id="submit-button">').appendTo("body");
   
   $("#user-input").submit(function (event) {
     event.preventDefault();
