@@ -1,0 +1,32 @@
+{
+  "name": "chatbot-challenge",
+  "version": "1.0.0",
+  "description": "Chatbot created with html, css, JS and jQuery",
+  "main": "main.js",
+  "dependencies": {
+    "connect": "^3.7.0",
+    "jquery": "^3.5.1",
+    "serve-static": "^1.14.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarinaFroes/chatbot-codeworks-challenge.git"
+  },
+  "keywords": [
+    "chatbot",
+    "html",
+    "css",
+    "js",
+    "jquery"
+  ],
+  "author": "Marina Costa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarinaFroes/chatbot-codeworks-challenge/issues"
+  },
+  "homepage": "https://github.com/MarinaFroes/chatbot-codeworks-challenge#readme"
+}

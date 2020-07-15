@@ -39,3 +39,4 @@
 * [JavaScript Modules with Import/Export Syntax (ES6) - JavaScript Tutorial](https://www.youtube.com/watch?v=s9kNndJLOjg)
 * [CSS tricks](https://css-tricks.com/)
 * Icon by <a href="https://www.flaticon.com/br/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/br/" title="Flaticon"> www.flaticon.com</a>
+* [Using node JS as a simple server](https://stackoverflow.com/questions/6084360/using-node-js-as-a-simple-web-server)
