@@ -20,10 +20,20 @@
 - [x] The screen automatically flows and follows the messages posted. 
 - [x] Each message should have a small indication of the time it was sent.
 
+## How to install it
+
+- Download the files, cd into root directory and run:
+```bash
+# Install dependencies
+$ npm install
+
+# Run the server
+$ npm start
+```  
+- Access it on `localhost:8080`
+
 ## How to use it
 
-- Download the files
-- Open `index.html` on the browser
 - Choose `yes` to chat with the bot
 - Answer the bot's questions and press `enter` or click `send` to submit
 - Repeat until the chat is over
@@ -37,6 +47,7 @@
 * [jQuery Documentation](https://jquery.com/)
 * [MDN Documentation](https://developer.mozilla.org/en-US/)
 * [JavaScript Modules with Import/Export Syntax (ES6) - JavaScript Tutorial](https://www.youtube.com/watch?v=s9kNndJLOjg)
+* []()
+* [Using node JS as a simple server](https://stackoverflow.com/questions/6084360/using-node-js-as-a-simple-web-server)
 * [CSS tricks](https://css-tricks.com/)
 * Icon by <a href="https://www.flaticon.com/br/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/br/" title="Flaticon"> www.flaticon.com</a>
-* [Using node JS as a simple server](https://stackoverflow.com/questions/6084360/using-node-js-as-a-simple-web-server)
